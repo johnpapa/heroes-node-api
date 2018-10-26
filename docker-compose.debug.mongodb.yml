@@ -1,0 +1,24 @@
+version: '2.1'
+
+services:
+  mongocontainer:
+    image: mongo
+    volumes:
+      - ./data/vikings-db:/data/db
+    ports:
+      - 27017:27017
+  vikings:
+    image: vikings
+    build: .
+    env_file:
+      - .env
+    # environment:
+    #   NODE_ENV: development
+    restart: always
+    links:
+      - mongocontainer
+    ports:
+      - 7626:8626
+      - 9229:9229
+    command: npm run start_debug
+    # command: node --inspect=0.0.0.0:9229 server.js

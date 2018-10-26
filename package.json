@@ -1,0 +1,26 @@
+{
+  "name": "vikings",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server.js",
+    "start_debug": "node --inspect=0.0.0.0:9229 server.js",
+    "start_azure_debug": "if [[ ${APPSVC_TUNNEL_PORT} != \"\" ]]; then node --inspect=0.0.0.0:$APPSVC_TUNNEL_PORT server.js; else npm run start; fi",
+    "local": "node -r dotenv/config server.js",
+    "debug": "node -r dotenv/config --inspect=9229 server.js"
+  },
+  "private": true,
+  "dependencies": {
+    "@azure/cosmos": "^2.0.2",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "mongodb": "^3.1.6",
+    "mongoose": "^5.2.17"
+  },
+  "devDependencies": {
+    "dotenv": "^6.1.0",
+    "eslint": "^5.6.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^3.0.1"
+  }
+}
