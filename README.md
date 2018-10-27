@@ -1,10 +1,10 @@
-# Vikings
+# heroes-node-api
 
-Demo App for Vikings - 2018
+Demo App for heroes and villains
 
 by [John Papa](http://twitter.com/john_papa)
 
-Angular, Node, Docker, Azure, Cosmos DB/Mongo DB!
+Node, Express, Docker, Azure, Cosmos DB/Mongo DB!
 
 Try using 1 of these variations of databases and Node SDKs:
 
@@ -18,28 +18,16 @@ You can also try them in Docker containers or running the Node.js app locally.
 
 Here are all of the slides/code from my presentation at [ngVikings event](https://twitter.com/ngvikingsconf) this week!
 
-- Code: <https://github.com/johnpapa/vikings>
-- Angular extensions: <https://aka.ms/ng-essentials>
 - Node extensions: <https://aka.ms/vsc-node>
 - Free Azure Trial: <https://aka.ms/jp-free>
-
-## Requirements
-
-- Install the Angular CLI
-
-  Only required when running local, _without docker_.
-
-  ```bash
-  npm install -g @angular/cli
-  ```
 
 ## Getting Started
 
 1. Clone this repository
 
    ```bash
-   git clone https://github.com/johnpapa/vikings.git
-   cd vikings
+   git clone https://github.com/johnpapa/heroes-node-api.git
+   cd heroes-node-api
    ```
 
 1. Install the npm packages
@@ -67,11 +55,11 @@ WWW=./
 DATA_OPTION=cloud_cosmos_sdk
 
 CORE_API_KEY=your-core-api-key-goes-here
-CORE_API_URL=https://vikings-core.documents.azure.com:443/
+CORE_API_URL=https://heroes-core.documents.azure.com:443/
 
 USE_LIVE_DATA=yes
-MONGO_API_ACCOUNT=vikings
-MONGO_API_DB=vikings-db
+MONGO_API_ACCOUNT=heroes
+MONGO_API_DB=heroes-db
 MONGO_API_KEY=your-mongo-api-key-goes-here
 MONGO_API_PORT=10255
 
@@ -140,7 +128,7 @@ This contains:
     # e.g. Mongo DB in a container
     DATA_OPTION=local_mongo
     USE_LIVE_DATA=yes
-    MONGO_API_DB=vikings-db
+    MONGO_API_DB=heroes-db
     # use localhost or your linked docker container (mongocontainer)
     LOCAL_MONGO=mongocontainer
     ```
@@ -185,7 +173,7 @@ This contains:
     # e.g. Mongo DB in a container
     DATA_OPTION=cloud_cosmos_sdk
     CORE_API_KEY=your-key
-    CORE_API_URL=https://vikings-core.documents.azure.com:443/
+    CORE_API_URL=https://heroes-core.documents.azure.com:443/
     ```
 
 1. CMD+SHIFT+P `docker: compose up`
@@ -273,6 +261,6 @@ There are scripts in the `/meta` folder that will help you clean and repopulate 
 
 ## Problems or Suggestions
 
-[Open an issue here](https://github.com/johnpapa/vikings/issues)
+[Open an issue here](https://github.com/johnpapa/heroes-node-api/issues)
 
 Create the Docker image that you can `docker push` to a registry. This command uses `docker-compose` to build the image and run the container.
