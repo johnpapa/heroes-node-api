@@ -19,7 +19,6 @@ go()
   .then(() => { exit(`Completed successfully`); })
   .catch((error) => { exit(`Completed with error ${JSON.stringify(error)}`); });
 
-
 async function go() {
   // Delete the database
   console.log(heroContainer);
