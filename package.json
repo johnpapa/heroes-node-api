@@ -13,6 +13,7 @@
   "dependencies": {
     "@azure/cosmos": "^2.0.2",
     "body-parser": "^1.18.2",
+    "cors": "^2.8.5",
     "express": "^4.16.3",
     "mongodb": "^3.1.6",
     "mongoose": "^5.2.17"
