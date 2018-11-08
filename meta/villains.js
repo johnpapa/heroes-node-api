@@ -1,18 +1,23 @@
 const villains = [
   {
-    id: 'VillainJohn',
-    name: 'John',
-    description: 'Slayer of JavaScript',
+    id: 'VillainMadelyn',
+    name: 'Madelyn',
+    description: 'chief of theatre props',
   },
   {
-    id: 'VillainSimona',
-    name: 'Simona',
-    description: 'Wielder of the Service Worker',
+    id: 'VillainHaley',
+    name: 'Haley',
+    description: 'pen wielder',
   },
   {
-    id: 'VillainAsim',
-    name: 'Asim',
-    description: 'The Hacker of Node',
+    id: 'VillainElla',
+    name: 'Ella',
+    description: 'fashionista',
+  },
+  {
+    id: 'VillainLandon',
+    name: 'Landon',
+    description: 'Mandalorian mauler',
   },
 ];
 
