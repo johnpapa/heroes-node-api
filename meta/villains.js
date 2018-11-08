@@ -2,7 +2,7 @@ const villains = [
   {
     id: 'VillainMadelyn',
     name: 'Madelyn',
-    description: 'chief of theatre props',
+    description: 'the cat whisperer',
   },
   {
     id: 'VillainHaley',
