@@ -7,8 +7,8 @@ services:
       - ./data/vikings-db:/data/db
     ports:
       - 27017:27017
-  vikings:
-    image: vikings
+  heroes-node-api:
+    image: heroes-node-api
     build: .
     env_file:
       - .env
@@ -18,7 +18,7 @@ services:
     links:
       - mongocontainer
     ports:
-      - 7626:8626
+      - 7777:7777
       - 9229:9229
     command: npm run start_debug
     # command: node --inspect=0.0.0.0:9229 server.js

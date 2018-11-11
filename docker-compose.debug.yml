@@ -1,8 +1,8 @@
 version: '2.1'
 
 services:
-  vikings:
-    image: vikings
+  heroes-node-api:
+    image: heroes-node-api
     build: .
     env_file:
       - .env
@@ -10,7 +10,7 @@ services:
     #   NODE_ENV: development
     restart: always
     ports:
-      - 7626:8626
+      - 7777:7777
       - 9229:9229
     command: npm run start_debug
     # command: node --inspect=0.0.0.0:9229 server.js
