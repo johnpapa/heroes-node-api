@@ -1,12 +1,12 @@
 version: '2.1'
 
 services:
-  vikings:
-    image: vikings
+  heroes-node-api:
+    image: heroes-node-api
     build: .
     environment:
       NODE_ENV: production
     restart: always
     ports:
-      - 7626:8626
+      - 7777:7777
     command: npm run start_azure_debug
