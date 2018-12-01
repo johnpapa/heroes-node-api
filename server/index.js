@@ -16,7 +16,7 @@ function start() {
   }
 
   const app = express();
-  const port = process.env.PORT || 8626;
+  const port = process.env.PORT || 7777;
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use('/api', routes);

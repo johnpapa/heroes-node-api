@@ -11,5 +11,4 @@ FROM node:10.13-alpine
 WORKDIR /usr/src/app
 COPY --from=node-server /usr/src /usr/src
 EXPOSE 7777
-# CMD ["node", "server.js"]
 CMD ["npm", "start"]
