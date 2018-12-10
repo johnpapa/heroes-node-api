@@ -7,8 +7,8 @@ services:
       - ./data/vikings-db:/data/db
     ports:
       - 27017:27017
-  vikings:
-    image: vikings
+  heroes-node-api:
+    image: heroes-node-api
     build: .
     env_file:
       - .env

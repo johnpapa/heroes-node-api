@@ -9,4 +9,4 @@ services:
     restart: always
     ports:
       - 7777:7777
-    command: npm run start_azure_debug
+    command: npm start
