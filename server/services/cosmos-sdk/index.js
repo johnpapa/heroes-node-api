@@ -6,5 +6,5 @@ const settingsService = require('./settings.service');
 module.exports = {
   heroService,
   villainService,
-  settingsService,
+  settingsService
 };

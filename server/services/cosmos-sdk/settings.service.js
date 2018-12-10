@@ -14,5 +14,5 @@ async function getSettings(req, res) {
 }
 
 module.exports = {
-  getSettings,
+  getSettings
 };

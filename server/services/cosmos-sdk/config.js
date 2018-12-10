@@ -8,5 +8,5 @@ module.exports = {
   databaseDefName: 'vikings-db',
   settingsContainer: 'settings',
   heroContainer: 'heroes',
-  villainContainer: 'villains',
+  villainContainer: 'villains'
 };

@@ -17,7 +17,7 @@ async function getVillains(req, res) {
 async function postVillain(req, res) {
   const villain = {
     name: req.body.name,
-    description: req.body.description,
+    description: req.body.description
   };
   villain.id = `Villain ${villain.name}`;
 
@@ -34,7 +34,7 @@ async function putVillain(req, res) {
   const villain = {
     id: req.params.id,
     name: req.body.name,
-    description: req.body.description,
+    description: req.body.description
   };
 
   try {
@@ -62,5 +62,5 @@ module.exports = {
   getVillains,
   postVillain,
   putVillain,
-  deleteVillain,
+  deleteVillain
 };

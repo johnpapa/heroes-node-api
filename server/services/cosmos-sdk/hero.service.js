@@ -17,7 +17,7 @@ async function getHeroes(req, res) {
 async function postHero(req, res) {
   const hero = {
     name: req.body.name,
-    description: req.body.description,
+    description: req.body.description
   };
   hero.id = `Hero ${hero.name}`;
 
@@ -34,7 +34,7 @@ async function putHero(req, res) {
   const hero = {
     id: req.params.id,
     name: req.body.name,
-    description: req.body.description,
+    description: req.body.description
   };
 
   try {
@@ -62,20 +62,21 @@ async function queryHeroesNyName(req, res) {
   console.log(`Querying container:\n${heroContainer}`);
 
   const querySpec = {
-    query: 'SELECT h.id, h.name, h.description FROM heroes h WHERE h.name = @value',
+    query:
+      'SELECT h.id, h.name, h.description FROM heroes h WHERE h.name = @value',
     parameters: [
       {
         name: '@value',
-        value: req.params.name, // e.g. 'api/hero/querybyname/Aslaug',
-      },
-    ],
+        value: req.params.name // e.g. 'api/hero/querybyname/Aslaug',
+      }
+    ]
   };
 
   captains.log(querySpec);
 
   try {
     const { result: heroes } = await container.items.query(querySpec).toArray();
-    heroes.forEach((queryResult) => {
+    heroes.forEach(queryResult => {
       const resultString = JSON.stringify(queryResult);
       captains.log(`Query returned ${resultString}\n`);
     });
@@ -100,5 +101,5 @@ module.exports = {
   postHero,
   putHero,
   deleteHero,
-  queryHeroesNyName,
+  queryHeroesNyName
 };
