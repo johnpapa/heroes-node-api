@@ -1,36 +1,24 @@
-const cosmosSDK = require('./cosmos-sdk');
 const mongo = require('./mongo');
-const { connect } = require('./mongo/db');
+const cosmosSDK = require('./cosmos-sdk');
 
 let useCosmosSDK = false;
 
-const captains = console;
+if (process.env.DATA_OPTION === 'cloud_cosmos_sdk') {
+  useCosmosSDK = true;
+}
 
-connect();
-
-switch (process.env.DATA_OPTION) {
-  case 'cloud_cosmos':
-    useCosmosSDK = false;
-    captains.log(`===> Using Cosmos with the Mongo API`);
-    break;
-
-  case 'cloud_cosmos_sdk':
-    useCosmosSDK = true;
-    captains.log(`===> Using Cosmos with the Cosmos SDK`);
-    break;
-
-  case 'local_mongo':
-    useCosmosSDK = false;
-    captains.log(`===> Using Mongo`);
-    break;
-
-  default:
-    captains.log(`===> Database not selected`);
-    break;
+if (['cloud_cosmos', 'local_mongo'].includes(process.env.DATA_OPTION)) {
+  const { connect } = require('./mongo/db');
+  connect();
+  useCosmosSDK = false;
 }
 
 module.exports = {
   heroService: useCosmosSDK ? cosmosSDK.heroService : mongo.heroService,
-  villainService: useCosmosSDK ? cosmosSDK.villainService : mongo.villainService,
-  settingsService: useCosmosSDK ? cosmosSDK.settingsService : mongo.settingsService,
+  villainService: useCosmosSDK
+    ? cosmosSDK.villainService
+    : mongo.villainService,
+  settingsService: useCosmosSDK
+    ? cosmosSDK.settingsService
+    : mongo.settingsService
 };
