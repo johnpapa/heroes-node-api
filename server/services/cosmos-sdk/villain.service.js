@@ -19,7 +19,7 @@ async function postVillain(req, res) {
     name: req.body.name,
     description: req.body.description
   };
-  villain.id = `Villain ${villain.name}`;
+  villain.id = `Villain${villain.name}`;
 
   try {
     const { body } = await container.items.create(villain);

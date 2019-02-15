@@ -19,7 +19,7 @@ async function postHero(req, res) {
     name: req.body.name,
     description: req.body.description
   };
-  hero.id = `Hero ${hero.name}`;
+  hero.id = `Hero${hero.name}`;
 
   try {
     const { body } = await container.items.create(hero);
@@ -59,7 +59,7 @@ async function deleteHero(req, res) {
 }
 
 async function queryHeroesNyName(req, res) {
-  console.log(`Querying container:\n${heroContainer}`);
+  console.log(`Querying heroes container`);
 
   const querySpec = {
     query:
